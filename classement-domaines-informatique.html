@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MOPG7 · ONLY HUMBLER  🌍</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070d14;--surface:#0f1a26;--ink:#e8f1f7;--muted:#8ea5b5;--line:#1f3345;--a:#3ee6d0;--b:#ffb547;--rain:62,230,208;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f1f6f9;--surface:#fff;--ink:#0d1b26;--muted:#4b6272;--line:#cbd9e2;--a:#007c80;--b:#b06a00;--rain:0,124,128;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f1f6f9;--surface:#fff;--ink:#0d1b26;--muted:#4b6272;--line:#cbd9e2;--a:#007c80;--b:#b06a00;--rain:0,124,128;color-scheme:light}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Sora,"Segoe UI",Arial,sans-serif;line-height:1.7;overflow-x:hidden}
+#rain{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.28;pointer-events:none}
+main{position:relative;z-index:1;max-width:48rem;margin:0 auto;padding:2rem 1.25rem 5rem}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace}
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center}
+.globe{font-size:4.5rem;display:inline-block;animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotateY(360deg)}}
+h1{font-size:clamp(2.2rem,8vw,4rem);line-height:1.05;font-weight:800;letter-spacing:-.03em;margin:.5rem 0 1rem}
+.grad{background:linear-gradient(100deg,var(--a),var(--b),var(--a));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 4s linear infinite}
+@keyframes flow{to{background-position:200% center}}
+.type{min-height:1.8em;color:var(--a);font-size:1.05rem}
+.type::after{content:"▌";animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.who{margin:1.5rem 0 0;padding:1.25rem;background:var(--surface);border:1px solid var(--line);border-radius:.75rem;font-size:1rem}
+.who strong{color:var(--a)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:.75rem;padding:1rem .5rem;text-align:center}
+.stat b{display:block;font-size:2rem;color:var(--b);line-height:1.1}
+.stat span{font-size:.8rem;color:var(--muted)}
+.cta{margin-top:1.5rem;align-self:flex-start;font:700 1rem Sora,sans-serif;color:#04141a;background:var(--a);border:0;border-radius:2rem;padding:.9rem 1.6rem;cursor:pointer;transition:transform .15s}
+.cta:active{transform:scale(.94)}
+.hint{color:var(--muted);font-size:.85rem;margin-top:.5rem;min-height:1.4em}
+.lead{color:var(--muted);font-size:1.1rem;margin:4rem 0 1rem}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.5rem 1.25rem 1.5rem 4.5rem;margin:1.25rem 0;transform-style:preserve-3d;transition:transform .2s,border-color .2s,opacity .7s,translate .7s}
+.card:hover{border-color:var(--a)}
+.js .card,.js .verdict{opacity:0;translate:0 2rem}
+.js .card.in,.js .verdict.in{opacity:1;translate:0 0}
+.n{position:absolute;left:1rem;top:.9rem;font-size:2.6rem;font-weight:800;color:var(--a)}
+.card:first-of-type .n{color:var(--b)}
+h2{font-size:1.4rem;margin:0 0 .6rem;line-height:1.25}
+.card p,.verdict p{margin:0 0 .8rem;max-width:62ch}
+.card p:last-child,.verdict p:last-child{margin:0}
+mark{background:color-mix(in srgb,var(--a) 22%,transparent);color:var(--ink);padding:0 .25em;border-radius:.25em}
+.verdict{margin-top:2.5rem;border:2px solid var(--b);border-radius:1rem;padding:1.5rem;background:var(--surface);transition:opacity .7s,translate .7s}
+.verdict h2{color:var(--b)}
+footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:3rem}
+.conf{position:fixed;top:-1rem;z-index:5;pointer-events:none;font-size:1.4rem;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+button:focus-visible{outline:3px solid var(--b);outline-offset:3px}
+@media (max-width:30rem){.card{padding-left:3.6rem}.n{font-size:2rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .card,.js .verdict{opacity:1;translate:0 0}}
+</style>
+</head>
+<body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<main>
+  <header class="hero">
+    <div class="globe" aria-hidden="true">🌍</div>
+    <h1><span class="grad">ONLY HUMBLER</span> </h1>
+    <div class="type mono" id="type" aria-live="off"></div>
+    <p class="who"><strong>MOPG7</strong> · Futur ingénieur en cybersécurité, avec une licence 1 en réseau et sécurité informatique, une licence 2 en analyse et programmation et une licence 3 en administration systèmes et réseaux. Informaticien depuis 2019.</p>
+    <div class="stats">
+      <div class="stat"><b id="yrs" data-to="0">0</b><span>ans en informatique</span></div>
+      <div class="stat"><b data-to="3">0</b><span>licences</span></div>
+      <div class="stat"><b data-to="100" data-suf="%">0</b><span>passion</span></div>
+    </div>
+    <button class="cta" id="fun">Mon encadreur de reseaux avait raison_Mr Robin MBITSI Ancien Responsable de CISCO à ESGAE 🎉</button>
+    <div class="hint mono" id="hint"></div>
+  </header>
+
+  <p class="lead">Mon classement des domaines de l’informatique, selon ce que j’observe du marché :</p>
+
+  <section class="card">
+    <div class="n" aria-hidden="true">1</div>
+    <h2>L’administration des systèmes</h2>
+    <p>Pour moi, c’est le meilleur domaine, surtout pour un administrateur systèmes qui maîtrise linux, la sécurité et comprend l’architecture réseau.</p>
+    <p>Il peut déployer des solutions complexes comme <mark>OpenStack</mark> en entreprise. Cela lui permet de décrocher des contrats importants et de travailler sur des projets qui lui assurent plusieurs années de revenus.</p>
+  </section>
+
+  <section class="card">
+    <div class="n" aria-hidden="true">2</div>
+    <h2>Le génie logiciel</h2>
+    <p>Un ingénieur logiciel peut obtenir des marchés dans le développement. Mais il doit aussi maîtriser les réseaux informatiques.</p>
+    <p>Un ingénieur logiciel qui ne connaît pas les réseaux risque d’être limité dans la réalisation de grands projets.</p>
+  </section>
+
+  <section class="card">
+    <div class="n" aria-hidden="true">3</div>
+    <h2>Les bases de données</h2>
+    <p>Un bon administrateur systèmes doit obligatoirement maîtriser au moins un SGBD, notamment <mark>SQL Server</mark>. C’est aussi le cas d’un ingénieur logiciel.</p>
+    <p>L’administration des bases de données (DBA) peut être très rémunératrice, mais elle demande beaucoup d’expérience. La majorité des DBA que je connais travaillent dans les banques, notamment dans l’analyse des données.</p>
+  </section>
+
+  <section class="verdict">
+    <h2>Les deux domaines que je retiens</h2>
+    <p>L’<strong>administration systèmes</strong> et le <strong>génie logiciel</strong>.</p>
+    <p>D’ailleurs, c’est l’administrateur systèmes qui gère Active Directory, et Active Directory est lui-même une base de données.</p>
+  </section>
+  <footer class="mono">© MOPG7</footer>
+</main>
+<script>
+document.documentElement.classList.add('js');
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// Années depuis 2019
+var yrs=document.getElementById('yrs');yrs.dataset.to=new Date().getFullYear()-2019;
+// Compteurs
+function count(el){var to=+el.dataset.to,suf=el.dataset.suf||'',t0=null;
+  function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1500,1);el.textContent=Math.round(to*p)+suf;if(p<1)requestAnimationFrame(f)}
+  rm?el.textContent=to+suf:requestAnimationFrame(f)}
+document.querySelectorAll('[data-to]').forEach(count);
+// Machine à écrire
+var words=['administrateur des systèmes linux et Windows','Administrateur réseau Informatique et Télécoms','futur Ingénieur en  cybersécurité','développeur passionné','MOPG7'],wi=0,ci=0,del=false,tp=document.getElementById('type');
+function tick(){var w=words[wi];tp.textContent='> '+w.slice(0,ci);
+  if(rm){tp.textContent='> '+words[0];return}
+  if(!del&&ci<w.length){ci++;setTimeout(tick,80)}
+  else if(!del){del=true;setTimeout(tick,1300)}
+  else if(ci>0){ci--;setTimeout(tick,35)}
+  else{del=false;wi=(wi+1)%words.length;setTimeout(tick,250)}}
+tick();
+// Apparition au scroll
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.card,.verdict').forEach(function(c){io.observe(c)});
+// Inclinaison 3D des cartes
+if(!rm&&matchMedia('(hover:hover)').matches){document.querySelectorAll('.card').forEach(function(c){
+  c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(700px) rotateY('+x*6+'deg) rotateX('+-y*6+'deg)'});
+  c.addEventListener('mouseleave',function(){c.style.transform=''})})}
+// Pluie de code
+var cv=document.getElementById('rain'),cx=cv.getContext('2d'),cols,drops;
+function size(){cv.width=innerWidth;cv.height=innerHeight;cols=Math.floor(cv.width/18);drops=Array(cols).fill(0).map(function(){return Math.random()*-50})}
+size();addEventListener('resize',size);
+function rain(){var rgb=getComputedStyle(document.documentElement).getPropertyValue('--rain').trim(),bg=getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+  cx.fillStyle=bg+'33';cx.fillRect(0,0,cv.width,cv.height);cx.fillStyle='rgb('+rgb+')';cx.font='14px monospace';
+  for(var i=0;i<cols;i++){cx.fillText(Math.random()>.5?'1':'0',i*18,drops[i]*18);if(drops[i]*18>cv.height&&Math.random()>.97)drops[i]=0;drops[i]++}
+  setTimeout(function(){requestAnimationFrame(rain)},60)}
+if(!rm)rain();
+// Confettis
+var msgs=['Merci ! 🙏','Les amis ne mentent jamais 😎','Le meilleur, c’est confirmé ✅','Développeur n°1 🌍','Encore ?! 🔥'],mi=0,hint=document.getElementById('hint');
+document.getElementById('fun').addEventListener('click',function(){
+  hint.textContent=msgs[mi++%msgs.length];
+  if(rm)return;
+  var em=['🌍','💻','🚀','⭐','🔐','🎉'];
+  for(var i=0;i<30;i++){var s=document.createElement('span');s.className='conf';s.textContent=em[i%em.length];s.style.left=Math.random()*100+'vw';s.style.animationDuration=(2+Math.random()*2)+'s';document.body.appendChild(s);setTimeout(function(x){x.remove()},4500,s)}});
+</script>
+</body>
+</html>
